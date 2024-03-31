@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophie Bluel - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script type="module" src="/assets/login.js"></script>
+  </head>
+
+  <body id="loginBody">
+    <div class="loginFormContainer">
+      <form class="loginForm">
+        <h2>Log In</h2>
+
+        <label for="name">E-mail</label>
+        <input required type="email" id="name" name="name" />
+
+        <label for="password">Mot de passe</label>
+        <input required type="password" id="password" name="password" />
+
+        <input id="loginButton" type="submit" value="Se connecter" />
+        <a href="#">Mot de passe oublié</a>
+      </form>
+    </div>
+  </body>
+</html>

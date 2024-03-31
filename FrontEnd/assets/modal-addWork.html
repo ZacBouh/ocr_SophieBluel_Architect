@@ -1,0 +1,25 @@
+<div id="modal-content">
+    <h2>Ajout Photo</h2>
+    <form id="add-work-form" class="form" action="">
+        <label for="add-work-file" id="add-work-file-label">
+            <i class="fa-regular fa-image"></i>
+            <div>
+                + Ajouter une photo
+            </div>
+            <p>jpg, png : 4mo max</p>
+        </label>
+        <input type="file" id="add-work-file" accept=".png, .jpg" required name="image">
+
+        <label for="add-work-title">Titre</label>
+        <input type="text" id="add-work-title" name="title" required>
+
+        <label for="add-work-category">Catégorie</label>
+        <div class="select-container">
+
+            <select name="category" id="add-work-category" required>
+                <option disabled selected value>--Choisir une catégorie--</option>
+            </select>
+        </div>
+        <button id="add-picture-button" class=" button disactivated" type="submit">Valider</button>
+    </form>
+</div>

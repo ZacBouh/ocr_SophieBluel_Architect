@@ -1,0 +1,646 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** end reset css**/
+
+.notVisible {
+	visibility: hidden;
+}
+
+body {
+	max-width: 1140px;
+	margin: auto;
+	font-family: 'Work Sans';
+	font-size: 14px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+
+section {
+	margin: 50px 0
+}
+
+h1 {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1>span {
+	font-family: 'Work Sans';
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	;
+}
+
+h2 {
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+
+nav li,
+nav a:link,
+nav a {
+	padding: 0 10px;
+	font-size: 1.2em;
+	text-decoration: none;
+	color: black;
+}
+
+li:hover,
+a:hover {
+	color: #B1663C;
+}
+
+a:visited {
+	color: inherit;
+}
+
+#introduction {
+	display: flex;
+	align-items: center;
+}
+
+#introduction figure {
+	flex: 1
+}
+
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery.edit-mode {
+	margin-top: 92px;
+}
+
+.gallery img {
+	width: 100%;
+
+}
+
+#contact,
+.loginForm {
+	width: 50%;
+	margin: auto;
+}
+
+#contact>* {
+	text-align: center;
+
+}
+
+#contact h2,
+.loginForm h2 {
+	margin-bottom: 20px;
+}
+
+#contact form,
+.loginFormContainer .loginForm,
+#add-work-form {
+	text-align: left;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input,
+.loginForm input,
+.form input,
+.form select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding-left: 19px;
+}
+
+#contact label,
+.loginForm label,
+.form label {
+	margin: 2em 0 1em 0;
+}
+
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding: 19px;
+}
+
+input[type="submit"],
+.filterButton,
+#add-picture-button,
+.filterButton.clickedButton,
+button[type='submit'],
+.button {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin: 2em auto;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px;
+}
+
+
+/* FILTERS */
+
+#filtersContainer {
+	box-sizing: border-box;
+	height: 37px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 51px;
+	margin-bottom: 51px;
+}
+
+#filtersContainer button {
+	height: 100%;
+	margin: 0;
+}
+
+.filterButton {
+	color: #1D6154;
+	background-color: white;
+}
+
+/* LOGIN PAGE */
+
+#loginBody {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.loginFormContainer {
+	margin-top: 100px;
+}
+
+.loginForm h2,
+.loginForm a {
+	text-align: center;
+}
+
+.loginForm a {
+	font-size: 14px;
+	font-weight: 500;
+	color: #3D3D3D;
+}
+
+/* MODIFIER LES PROJETS */
+
+#portfolio h2 {
+	max-width: fit-content;
+	margin: auto;
+}
+
+#editButton {
+	position: absolute;
+	margin-left: 31px;
+	margin-top: 10px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+}
+
+#editButton i {
+	display: inline-block;
+	margin-right: 10px;
+	transform: translateY(-2px);
+}
+
+#edit-mode-banner {
+	height: 59px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+
+#edit-mode-banner-content {
+	max-width: fit-content;
+	font-size: 16px;
+	color: white;
+}
+
+#edit-mode-banner-content p {
+	margin-left: 12px;
+	display: inline-block;
+}
+
+/* MODAL */
+#modalContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+	font-family: "Work Sans";
+}
+
+#modal {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	min-height: fit-content;
+	width: 630px;
+	max-height: 100%;
+	background-color: #FFFFFF;
+	padding: 26px 0px 55px 0px;
+	border-radius: 10px;
+}
+
+
+#modal>* {
+	flex: 1 1 100%;
+}
+
+#edit-nav {
+	display: flex;
+	padding: 0 30px;
+	font-size: 20px;
+}
+
+
+
+#edit-close-button {
+	width: fit-content;
+	display: block;
+	margin-left: auto;
+}
+
+#modal h2 {
+	text-align: center;
+	height: fit-content;
+	margin-top: 10px;
+}
+
+
+#edit-gallery,
+#add-work-form {
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 9px;
+	margin: 46px 105px;
+	margin-bottom: 38px;
+
+}
+
+#edit-gallery {
+	padding-bottom: 67px;
+	border-bottom: 1px solid black;
+}
+
+#add-work-form {
+	height: fit-content;
+	gap: 0px;
+	margin-bottom: 0px;
+	margin-top: 36px;
+}
+
+#edit-gallery figure {
+	position: relative;
+	max-width: 76px;
+}
+
+#edit-gallery figcaption {
+	display: block;
+	box-sizing: border-box;
+	font-size: 11px;
+	text-align: center;
+	color: white;
+	background-color: black;
+	padding: 3px 4px;
+	border-radius: 2px;
+	margin: 4px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 17px;
+	height: 17px;
+
+}
+
+#edit-gallery figcaption::after {
+	position: absolute;
+	box-sizing: border-box;
+	content: '\f2ed';
+	font-family: "Font Awesome 6 free";
+	font-size: 10px;
+	top: 3px;
+	right: 4px;
+	font-weight: 600;
+	color: white;
+}
+
+#modal img {
+	max-width: 100%;
+}
+
+/* AJOUTER UNE PHOTO */
+
+#add-picture-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 1 auto;
+	height: 36px;
+	margin: auto;
+	margin-top: 32px;
+}
+
+#add-picture-button.disactivated {
+	background-color: #A7A7A7;
+	border: #A7A7A7;
+}
+
+#add-work-file {
+	position: absolute;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+label[for='add-work-file'] {
+	background-color: #E8F1F6;
+	width: 420px;
+	height: fit-content;
+	max-height: 169px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	margin: 0px;
+}
+
+label[for='add-work-file'] i,
+label[for='add-work-file'] p,
+label[for='add-work-file'] div {
+	pointer-events: none;
+}
+
+label[for='add-work-file'] i {
+	display: block;
+	font-size: 76px;
+	color: #B9C5CC;
+	margin-top: 23px;
+}
+
+label[for='add-work-file'] p {
+	font-size: 10px;
+	margin-bottom: 19px;
+}
+
+label[for='add-work-file'] div {
+	background-color: #B9C5CC;
+	padding: 10px 33px;
+	border-radius: 50px;
+	margin-bottom: 7px;
+	margin-top: 6px;
+}
+
+#file-img-preview {
+	position: absolute;
+	max-height: 169px;
+}
+
+.form select {
+	appearance: none;
+	padding: 0px 19px 0px 19px;
+	width: 100%;
+}
+
+.form .select-container {
+	position: relative;
+
+}
+
+.select-container {
+	border-bottom: 1px solid black;
+	padding-bottom: 47px;
+}
+
+.form .select-container::after {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	box-sizing: border-box;
+	content: '\f107';
+	font-family: "Font Awesome 6 free";
+	font-size: 15px;
+	font-weight: 600;
+	color: black;
+	display: block;
+	pointer-events: none;
+}
+
+.form .select option {
+	width: 500px;
+}
+
+#add-work-form label {
+	margin-bottom: 10px;
+}
+
+label[for="add-work-category"] {
+	margin-top: 21px;
+}
+
+/* FOOTER */
+
+footer {
+	margin-top: auto;
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
