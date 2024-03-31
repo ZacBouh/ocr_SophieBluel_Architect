@@ -1,30 +1,29 @@
+// import { user } from "./user.js";
+
 // GLOBALS
 
-export let user = { loggedIn: false };
 export let workEdited = false;
 export const setWorkEdited = (isWorkEdited) => (workEdited = isWorkEdited);
 
-export function checkUserLogin() {
-  function logout(event) {
-    event.target?.removeEventListener("click", logout);
-    sessionStorage.clear();
-    window.location.replace(window.location.origin);
-  }
-
-  if (sessionStorage.getItem("token")) {
-    user = {
-      loggedIn: true,
-      userId: sessionStorage.getItem("userId") ?? undefined,
-      token: sessionStorage.getItem("token") ?? undefined,
-    };
-
-    const loginButton = document.getElementById("nav-login-button");
-    loginButton &&
-      (loginButton.textContent = "logout") &&
-      (loginButton.href = window.location.origin);
-    loginButton?.addEventListener("click", logout);
-  }
+async function getData(apiUrl, dataType) {
+  const response = await fetch(apiUrl + dataType);
+  return await response.json();
 }
+
+export const getDataSet = async function (dataTypes) {
+  console.log("fetching fresh data ...");
+  const dataSet = {};
+  for (const dataType of dataTypes) {
+    const data = await getData(apiUrl, dataType);
+    if (isCategory(data)) {
+      dataSet.categories = data;
+    } else {
+      dataSet.works = data;
+    }
+  }
+  console.log("received fresh data : ", dataSet);
+  return dataSet;
+};
 
 // TYPES
 
@@ -58,16 +57,17 @@ export const createWorkFigure = function (
   return workFigure;
 };
 
-export async function importHTMLasString(url) {
-  const response = await fetch(url);
-  const htmlContent = await response.text();
-  return htmlContent;
-}
+// export async function importHTMLasString(url) {
+//   const response = await fetch(url);
+//   const htmlContent = await response.text();
+//   return htmlContent;
+// }
 
 export const insertDiv = function (targetElement, position, divId) {
   const div = document.createElement("div");
   div.id = divId;
   targetElement.insertAdjacentElement(position, div);
+  console.log("created element : ", divId);
   return div;
 };
 
@@ -98,11 +98,6 @@ export const displayWorks = function (
 export function displayMessage(message) {
   alert(message);
 }
-
-export const deleteHandler = (event) => {
-  event.target?.removeEventListener("click", deleteHandler);
-  deleteWork(event, user);
-};
 
 export async function deleteWork(event, user) {
   const eventTarget = event.target;
@@ -141,14 +136,18 @@ export async function deleteWork(event, user) {
   }
 }
 
+export const deleteHandler = (event, user) => {
+  event.target?.removeEventListener("click", deleteHandler);
+  deleteWork(event, user);
+};
 // PATH & URL
 export const apiUrl = "http://localhost:5678/api/";
 
-export const headerUrl = new URL(window.location.origin + "/assets/header");
-export const footerUrl = new URL(window.location.origin + "/assets/footer");
-export const modalEditUrl = new URL(
-  window.location.origin + "/assets/modal-edit"
-);
-export const modalAddWorkUrl = new URL(
-  window.location.origin + "/assets/modal-addWork"
-);
+// export const headerUrl = new URL(window.location.origin + "/assets/header");
+// export const footerUrl = new URL(window.location.origin + "/assets/footer");
+// export const modalEditUrl = new URL(
+//   window.location.origin + "/assets/modal-edit"
+// );
+// export const modalAddWorkUrl = new URL(
+//   window.location.origin + "/assets/modal-addWork"
+// );
