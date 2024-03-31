@@ -1,14 +1,6 @@
 import { displayMessage, apiUrl } from "./helpers.js";
 
-//Types
-
-// importer le header et le footer au chargement de la page
-
 window.onload = async () => {
-  // const htmlHeader = await importHTMLasString(headerUrl);
-  // const htmlFooter = await importHTMLasString(footerUrl);
-  // document.querySelector("body")?.insertAdjacentHTML("afterbegin", htmlHeader);
-  // document.querySelector("body")?.insertAdjacentHTML("beforeend", htmlFooter);
   //Mettre en gras le lien login dans la barre de navigation
   const navLinksList = document.querySelector("header > nav > ul");
   const loginLinkXPATH = document.evaluate("//a[text()='login']", navLinksList);
