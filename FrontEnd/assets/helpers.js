@@ -1,7 +1,3 @@
-// import { user } from "./user.js";
-
-// GLOBALS
-
 export let workEdited = false;
 export const setWorkEdited = (isWorkEdited) => (workEdited = isWorkEdited);
 
@@ -56,12 +52,6 @@ export const createWorkFigure = function (
     `;
   return workFigure;
 };
-
-// export async function importHTMLasString(url) {
-//   const response = await fetch(url);
-//   const htmlContent = await response.text();
-//   return htmlContent;
-// }
 
 export const insertDiv = function (targetElement, position, divId) {
   const div = document.createElement("div");

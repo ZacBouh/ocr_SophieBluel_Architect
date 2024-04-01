@@ -1,5 +1,8 @@
-import { dataSet, displayedWorks, setDisplayedWorks } from "../index.js";
+import { dataSet } from "../index.js";
 import { displayWorks } from "./helpers.js";
+
+export let displayedWorks = dataSet.works;
+export const setDisplayedWorks = (works) => (displayedWorks = works);
 
 export default function filters(categoriesSet) {
   if (categoriesSet) {

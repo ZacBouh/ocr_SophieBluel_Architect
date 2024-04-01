@@ -8,8 +8,8 @@ import {
   getDataSet,
   deleteHandler,
 } from "./helpers.js";
-import { dataSet, startEditingHandler } from "../index.js";
-import { user } from "./user.js";
+import { dataSet } from "../index.js";
+import { user, startEditingHandler } from "./user.js";
 
 const modalHtmlContent = `
 <div id="edit-nav">

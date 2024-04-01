@@ -33,17 +33,17 @@ function displayEditUi() {
         <button id="editButton"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
     `;
   portfolioTitle?.insertAdjacentHTML("beforeend", buttonHtml);
-  const editButton = document.getElementById("editButton");
 
+  const editButton = document.getElementById("editButton");
   editButton?.addEventListener("click", startEditingHandler);
 
-  //Supprimer la barre de filtres et tous les event listeners attachés
+  // delete filters
   const filterBar = document.getElementById("filtersContainer");
   filterBar?.replaceWith(filterBar?.cloneNode());
   document.getElementById("filtersContainer")?.remove();
-  // Ajuster la marge entre la gallerie et le titre
   document.querySelector(".gallery")?.classList.add("edit-mode");
-  //Ajouter le bandeau Mode Edition
+
+  // edit banner
   const body = document.querySelector("body");
   const editModeBanner = insertDiv(body, "beforebegin", "edit-mode-banner");
   const editModeBannerContent = insertDiv(
@@ -57,3 +57,15 @@ function displayEditUi() {
   );
   editModeBannerContent.insertAdjacentHTML("beforeend", "<p>Mode édition</p>");
 }
+
+// edit
+export const startEditingHandler = async function () {
+  () => console.log("start editing");
+
+  const editButton = document.getElementById("editButton");
+  editButton?.replaceWith(editButton.cloneNode(true));
+
+  openModal();
+
+  return modalContainer;
+};
