@@ -8,7 +8,7 @@ import {
   getDataSet,
   deleteHandler,
 } from "./helpers.js";
-import { dataSet } from "../index.js";
+import { dataSet } from "./data.js";
 import { user, startEditingHandler } from "./user.js";
 
 const modalHtmlContent = `
@@ -127,7 +127,6 @@ function addWorkModal() {
   const requiredInputs = document.querySelectorAll(
     "input[required], select[required]"
   );
-  console.log(requiredInputs);
   for (const input of requiredInputs) {
     if (input.getAttribute("type") === "text") {
       input?.addEventListener("input", addWorkFormValidate);
@@ -241,7 +240,7 @@ function selectFileHandler(event) {
   function displayFilePicture(event) {
     const target = event.target;
     const fileUrl = target.files && URL.createObjectURL(target.files[0]);
-    console.log(fileUrl, typeof fileUrl);
+    console.log("selected file : ", fileUrl);
     document.getElementById("file-img-preview")?.remove();
     fileInputLabel?.insertAdjacentHTML(
       "afterbegin",

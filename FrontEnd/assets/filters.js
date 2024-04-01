@@ -1,7 +1,7 @@
-import { dataSet } from "../index.js";
+import { dataSet } from "./data.js";
 import { displayWorks } from "./helpers.js";
 
-export let displayedWorks = dataSet.works;
+export let displayedWorks = dataSet.works ?? [];
 export const setDisplayedWorks = (works) => (displayedWorks = works);
 
 export default function filters(categoriesSet) {
@@ -52,7 +52,6 @@ const filterHandler = function (event) {
       filterProjects(projectType, dataSet.works);
     }
 
-    // (document.querySelector('.gallery') as HTMLElement).innerHTML = ''
     displayWorks(displayedWorks);
 
     console.log("displayed works : ", displayedWorks);
@@ -64,7 +63,7 @@ const filterProjects = function (projectType, data) {
   const filteredWorks = works.filter((work) => {
     return projectType === "tous" ? true : work.category.name === projectType;
   });
-  console.log("filter result : ", filteredWorks);
+  console.log("filtered works : ", filteredWorks);
   setDisplayedWorks(filteredWorks);
   return filteredWorks;
 };

@@ -1,5 +1,5 @@
-import { startEditingHandler } from "../index.js";
 import { insertDiv } from "./helpers.js";
+import openModal from "./modal.js";
 
 export let user = { loggedIn: false };
 
@@ -16,6 +16,7 @@ export function checkUserLogin() {
       userId: sessionStorage.getItem("userId") ?? undefined,
       token: sessionStorage.getItem("token") ?? undefined,
     };
+    console.log("user logged in");
 
     const loginButton = document.getElementById("nav-login-button");
     loginButton &&

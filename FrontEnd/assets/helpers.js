@@ -57,7 +57,6 @@ export const insertDiv = function (targetElement, position, divId) {
   const div = document.createElement("div");
   div.id = divId;
   targetElement.insertAdjacentElement(position, div);
-  console.log("created element : ", divId);
   return div;
 };
 
@@ -69,7 +68,6 @@ export const displayWorks = function (
 ) {
   if (worksToDisplay !== undefined) {
     target && (target.innerHTML = "");
-    console.log("works to display : ", worksToDisplay);
 
     for (const work of worksToDisplay) {
       const workFigure = createWorkFigure(
@@ -93,7 +91,6 @@ export async function deleteWork(event, user) {
   const eventTarget = event.target;
   const workToDeleteId =
     eventTarget.id === "" ? eventTarget.parentElement?.id : eventTarget.id;
-  console.log("delete event target : ", eventTarget);
   console.log("delete request : ", apiUrl + "works/" + workToDeleteId);
 
   const response = await fetch(apiUrl + "works/" + workToDeleteId, {

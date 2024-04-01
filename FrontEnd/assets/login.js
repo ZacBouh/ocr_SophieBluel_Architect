@@ -5,7 +5,6 @@ window.onload = async () => {
   const navLinksList = document.querySelector("header > nav > ul");
   const loginLinkXPATH = document.evaluate("//a[text()='login']", navLinksList);
   const loginLink = loginLinkXPATH.iterateNext();
-  console.log("login link is :", loginLink);
   loginLink.style.fontWeight = "600";
 };
 
@@ -26,7 +25,7 @@ const logInHandler = async function (event) {
     postData.email = nameInputValue;
     postData.password = passwordInputValue;
 
-    console.log("Request body : ", postData);
+    console.log("Trying to login : ", postData.email);
     if (await login(postData)) window.location.replace("/index.html");
   } else {
     form.reportValidity();
